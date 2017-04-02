@@ -3,6 +3,7 @@ package advancedscala
 import advancedscala.PrintableInstances._
 import advancedscala.PrintableSyntax._
 import cats.Show
+import cats.Eq
 
 /**
   * Created by ollyshaw on 02/04/17.
@@ -21,5 +22,9 @@ object Cat {
 
   implicit val catShow: Show[Cat] = {
     Show.show(cat => cat.formaty + " (from show)")
+  }
+
+  implicit val catEqual: Eq[Cat] = {
+    Eq.instance((x, y) => x == y)
   }
 }
