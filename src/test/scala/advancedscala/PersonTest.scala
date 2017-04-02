@@ -1,9 +1,10 @@
 package advancedscala
-import org.scalatest.{Matchers, FlatSpec}
-import JsonWriterInstances._
-import JsonSyntax._
 
-class PersonTest extends FlatSpec with Matchers{
+import advancedscala.JsonSyntax._
+import advancedscala.JsonWriterInstances._
+import org.scalatest.{FlatSpec, Matchers}
+
+class PersonTest extends FlatSpec with Matchers {
 
   "A Person" should "serializable to Json" in {
     val dave = Person("Dave", "dave@dave.com")

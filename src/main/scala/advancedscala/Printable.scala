@@ -15,10 +15,13 @@ object PrintableInstances {
 
 
 object PrintableSyntax {
+
   implicit class PrinterOps[A](value: A) {
-    def formaty(implicit f: Printable[A]):String = f.format(value)
-    def printy(implicit f: Printable[A]):Unit = {
+    def formaty(implicit f: Printable[A]): String = f.format(value)
+
+    def printy(implicit f: Printable[A]): Unit = {
       println(f.format(value))
     }
   }
+
 }
